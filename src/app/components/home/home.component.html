@@ -1,0 +1,15 @@
+<div *ngIf="user$ | async as u; else noUserInfo">
+    <h1>Bienvenue {{u.firstName}}!</h1>
+    <p>Department: {{u.departament}}</p>
+    <p>Email: {{u.email}}</p>
+
+    <p><a routerLink="/workspace/index">My workspace</a> </p>
+</div>
+
+<ng-template #noUserInfo>
+    
+    <p>
+        <button (click)="login()">Try to login</button>
+    </p>
+
+</ng-template>
