@@ -1,27 +1,30 @@
-# ItspApp
+# labo-ngapp-servicenow
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.7.
+Laboratório pessoal para experimentar as APIs ServiceNow à partir de uma aplicação Angular.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Instruções
 
-## Code scaffolding
+A aplicação é uma SPA Angular, utilise os comandos comuns `npm` para instalar suas dependências e lançar o ambiente de desenvolvimento:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```shell
+npm install
+npm start
+```
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Os parâmetros de configuração para conexão com sua instância ServiceNow são definidos no arquivo `src/assets/config.dev.json`, crie um novo arquivo segundo o exemplo abaixo:
 
-## Running unit tests
+```json
+{
+    "serviceNow": {
+        "requireAuth": true,
+        "instanceUrl": "https://xxxxxx.service-now.com",
+        "clientId": "MY_OAUTH_CLIENT_ID",
+        "apiNamespace": "/api/nome_api_custom"
+    }
+}
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+É preciso configurar o acesso CORS de sua instância, habilitando acesso à partir de `localhost` para testes em desenvolvimento.
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
